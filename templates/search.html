@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="mdl-layout__content">
+        <!-- {{ body }} -->
+
+	        <div class="mdl-grid portfolio-max-width">
+			{% for job in jobs %}
+			   <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+			   <div class="mdl-card__media"></div>
+			   <div class="mdl-card__title">
+			   <h2 class="mdl-card__title-text">{{ job["title"] }}</h2>
+			   </div>
+			   <div class="mdl-card__supporting-text">
+			   {{ job["summary"] }}
+			   </div>
+			   <div class="mdl-card__actions mdl-card--border">
+			   <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-   ripple-effect mdl-button--accent" href="{{ job["url"] }}">Read   more</a>
+			   </div>
+			   </div>
+			{% endfor %}
+			</div>
+
+{% endblock %}
